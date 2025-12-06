@@ -1,0 +1,16 @@
+venv/
+env/
+__pycache__/
+*.py[cod]
+
+fer2013.csv
+*.pth
+*.pt
+*.h5
+resnet_finetuned.pth
+*.png
+test_predictions.csv
+training_history.csv
+.DS_Store
+.vscode/
+.idea/
