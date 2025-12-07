@@ -7,3 +7,10 @@ scikit-learn
 opencv-python
 tqdm
 Pillow
+streamlit
+transformers
+langchain
+langchain-community
+langchain-huggingface
+faiss-cpu
+sentence-transformers

@@ -31,7 +31,7 @@ class FER2013TransferDataset(Dataset):
         face = np.asarray(face).reshape(48, 48).astype('uint8')
         face_img = Image.fromarray(face)
         
-        # KEY CHANGE: Convert Grayscale to RGB for ResNet
+        # Convert Grayscale to RGB for ResNet
         face_img = face_img.convert('RGB')
 
         if self.transform:
@@ -41,7 +41,7 @@ class FER2013TransferDataset(Dataset):
         return face_img, label
 
 def get_finetune_dataloaders(csv_path='fer2013.csv'):
-    # KEY CHANGE: Resize to 224x224 (ResNet Standard)
+    # Resize to 224x224 (ResNet Standard)
     train_transforms = transforms.Compose([
         transforms.Resize((224, 224)), 
         transforms.RandomHorizontalFlip(),

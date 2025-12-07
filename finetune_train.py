@@ -10,7 +10,7 @@ from finetune_data import get_finetune_dataloaders
 
 # CONFIG
 LEARNING_RATE = 0.0001 # Slower learning rate for fine-tuning
-EPOCHS = 15 # Fewer epochs needed because the model is already smart
+EPOCHS = 15 # Fewer epochs needed because the model is already trained aroud 14m parameter 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 def build_resnet_model(num_classes=7):
@@ -18,10 +18,7 @@ def build_resnet_model(num_classes=7):
     # Load pre-trained ResNet
     model = models.resnet18(weights='DEFAULT')
     
-    # Freeze the early layers (Optional: unfreeze for better accuracy if you have time)
-    # For this assignment, let's keep them active but use a low learning rate
-    
-    # Replace the last fully connected layer
+    # Replacing  the last fully connected layer
     # ResNet18's last layer is named 'fc' and has 512 input features
     num_ftrs = model.fc.in_features
     model.fc = nn.Linear(num_ftrs, num_classes)
